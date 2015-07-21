@@ -13,3 +13,4 @@ int maxSubArraySum(int A[],int n)
 	}
 	return maxsum;
 }
+//test the push function
