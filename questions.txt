@@ -2,4 +2,7 @@
 2）Google虫洞问题
 3）hulu面试题，连续的和最大
 4）hulu面试题，寻找局部最大值或者最小值，二分
+5）golang创建线程安全的map
+6）Google日志统计的问题
+7）GFS,MapReduce
 
