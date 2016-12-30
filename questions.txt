@@ -6,4 +6,6 @@
 6）Google日志统计的问题
 7）GFS,MapReduce
 8）各种排序算法，Dijkstra
+9）skip table
+10）软连接和硬链接
 
