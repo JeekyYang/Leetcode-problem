@@ -14,7 +14,7 @@ int longestConsecutiveSequence(vector<int> &A) {
 		used[nums[i]] = true;
 		
 		int data = nums[i] + 1;
-		while(used.find(data) && !used[data]) {
+		while(used.find(data)!= used.end() && !used[data]) {
 			used[data] = true;
 			data++;
 			ans++;
