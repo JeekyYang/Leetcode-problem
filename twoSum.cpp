@@ -1,9 +1,11 @@
-int twoSum(vector<int> &nums, int target) {
+vector<int> twoSum(vector<int> &nums, int target) {
 	const int n = nums.size();
-	vector<int> result(2, -1);
+	vector<int> ans(2, -1);
+	
+	if (n < 2) return ans;
 
-	unordered_map<int, int> used;
-	unordered_map<int, int> dup;
+	unordered_map<int, bool> used;
+	unordered_map<int, bool> dup;
 
 	for(int i = 0; i < n; i++) {
 		if (used.find(nums[i]) == used.end()) {
@@ -14,25 +16,23 @@ int twoSum(vector<int> &nums, int target) {
 	}
 
 	for(int i = 0; i < n; i++) {
-		if (used.find(nums[i]) == used.end()) {
-			continue;
-		}
+		if (used[nums[i]]) continue;
 
-		int other = target - nums[i];
 		used.erase(nums[i]);
+		int other = target - nums[i];
 
 		if (dup.find(other) != dup.end()) {
-			result[0] = i;
-			result[1] = dup[other];
+			ans[0] = i;
+			ans[1] = dup[other];
 			break;
 		}
 
 		if (used.find(other) != used.end()) {
-			result[0] = i;
-			result[1] = used[other];
+			ans[0] = i;
+			ans[1] = dup[other];
 			break;
 		}
 	}
-	
-	return result;
+
+	return ans;
 }
