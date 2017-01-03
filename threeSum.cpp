@@ -1,4 +1,4 @@
-vector<vector<int>> threeSum(vector<int> &nums, int target) {
+vector<vector<int> > threeSum(vector<int> &nums, int target) {
 	const int n = nums.size();
 	vector<vector<int> > ans;
 
@@ -12,8 +12,14 @@ vector<vector<int>> threeSum(vector<int> &nums, int target) {
 		int left = i+1;
 		int right = n-1;
 		while(left < right) {
-			if (left > i+1 && nums[left] == nums[left-1]) continue;
-			if (right < n-1 && nums[right] == nums[right+1]) continue;
+			if (left > i+1 && nums[left] == nums[left-1]) {
+				left++;
+				continue;
+			} 
+			if (right < n-1 && nums[right] == nums[right+1]) {
+				right--;
+				continue;
+			} 
 
 			int sum = nums[i] + nums[left] + nums[right];
 			if (sum < 0) {
@@ -22,6 +28,7 @@ vector<vector<int>> threeSum(vector<int> &nums, int target) {
 				right--;
 			} else {
 				ans.push_back({i, left, right});
+				left++;
 			}
 		}
 	}
