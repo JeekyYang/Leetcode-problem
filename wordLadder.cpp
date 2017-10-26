@@ -23,9 +23,9 @@ int wordLadder(string begin, string end, vector<int> &wordList) {
 			return cur.len;
 		}
 
-		string tmp = cur.word;
 		for(int i = 0; i < n; i++) {
 			for(char j = 'a'; j <= 'z'; j++) {
+				string tmp = cur.word;
 				if(tmp[i] == j) {
 					continue;
 				}
