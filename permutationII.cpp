@@ -28,7 +28,7 @@ void dfs(vector<vector<int>> &ans, vector<int> &nums, vector<int> &tmp, vector<b
 		}
 
 		tmp.push_back(nums[i]);
-		used[i];
+		used[i] = true;
 		dfs(ans, nums, tmp, used);
 
 		tmp.pop_back();
