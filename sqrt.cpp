@@ -39,3 +39,20 @@ int helper(int x, int start, int end) {
 		return mid;
 	}
 }
+
+//binary search
+int sqrt(int x) {
+	if(0 == x) return 0;
+	if(x < 4) return 1;
+	int start = 0, end = x/2;
+	while(start < end) {
+		int mid = start + (end-start+1)/2;
+		if(x/mid == mid) return mid;
+		else if(x/mid > mid) {
+			start = mid;
+		} else {
+			end = mid-1;
+		}
+	}
+	return start;
+}
